@@ -32,7 +32,7 @@ main{max-width:760px;margin:0 auto;padding:12px 16px 190px}
 h2{font-size:1.15rem;margin:22px 0 8px;padding-left:10px;border-left:6px solid var(--flag2)}
 .line{display:grid;grid-template-columns:96px 1fr 44px;gap:10px;align-items:start;background:var(--card);border:2px solid var(--line);border-radius:14px;padding:10px 10px 10px 12px;margin:8px 0}
 .line.now{border-color:var(--accent);background:var(--hl);color:#241a3d}
-.role{font-weight:600;font-size:.9rem;display:flex;gap:6px;align-items:center}
+.role{font-weight:600;font-size:.9rem;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
 .role i{width:12px;height:12px;border-radius:50%;background:var(--c);flex:none}
 .txt{font-size:1.2rem;line-height:1.7}
 .song{font-size:.8rem;color:var(--mute)}
@@ -88,6 +88,11 @@ table{border-collapse:collapse;width:100%}th,td{border:2px solid var(--line);pad
   <section id="bg" class="hide">
 <h2>先看影片</h2>
 <div class="card"><b>🎬 亡靈節影片</b><div class="zh">看完影片，再回來練習劇本。</div><a class="btn" href="https://www.youtube.com/watch?v=VhE4eg1iL8I" target="_blank" rel="noopener">▶ 在 YouTube 觀看</a></div>
+<h2>劇本裡的兩首歌</h2>
+<div class="cards">
+<div class="card"><b>🎃 This Is Halloween</b><div class="zh">電影《聖誕夜驚魂》(The Nightmare Before Christmas) 的開場曲</div><div class="ex">用在 Scene 1 開場，萬聖節的鬼怪們一起登場。</div><a class="btn" href="https://youtu.be/ZVuToMilP0A?si=xA6Eex6_1op0gRD_" target="_blank" rel="noopener">▶ 在 YouTube 聽</a></div>
+<div class="card"><b>💀 Remember Me</b><div class="zh">電影《可可夜總會》(Coco) 的歌曲</div><div class="ex">用在 Scene 2，Miguel 和大家一起唱出「記得我」，劇本裡標有 🎵 的句子就是這首歌。</div><a class="btn" href="https://www.youtube.com/watch?v=KP_XkN2v7OM" target="_blank" rel="noopener">▶ 在 YouTube 聽</a></div>
+</div>
 <h2>什麼是亡靈節？</h2>
 <p><b>Día de los Muertos</b>（亡靈節）是墨西哥的傳統節日，大約在每年 <b>11 月 1 日到 2 日</b>。人們用這個節日<b>想念已經過世的家人和朋友</b>。它不是要嚇人，而是充滿愛、回憶與感謝的日子，人們相信親人的靈魂會在這幾天回家看看大家。</p>
 <h2>亡靈節裡有什麼？</h2>
@@ -106,10 +111,10 @@ table{border-collapse:collapse;width:100%}th,td{border:2px solid var(--line);pad
 <tr><td>骷髏</td><td>用來嚇人</td><td>彩色可愛，代表記得與愛</td></tr></table></div>
 <h2>劇本怎麼連結亡靈節？</h2>
 <div class="cards">
-<div class="card"><b>Scene 1 萬聖節來了</b><div class="ex">鬼、女巫、木乃伊、吸血鬼玩 Trick or treat。這時 Miguel 出現，說他在慶祝 Día de los Muertos。</div></div>
+<div class="card"><b>Scene 1 萬聖節來了</b><div class="ex">鬼、女巫、木乃伊、吸血鬼玩 Trick or treat。開場先唱 This Is Halloween（來自《聖誕夜驚魂》）。這時 Miguel 出現，說他在慶祝 Día de los Muertos。</div></div>
 <div class="card"><b>Scene 2 認識亡靈節</b><div class="ex">怪物們問：<b>Love? Not spooky tricks?</b> Miguel 說這天是關於家人和愛。大家一起做 ofrenda：花、食物、照片，都是真的亡靈節元素。</div></div>
 <div class="card"><b>四種記得的方法</b><div class="ex">Tell their stories 講故事、Look at their pictures 看照片、Sing their songs 唱歌、Share their favorite food 分享食物。</div></div>
-<div class="card"><b>Remember Me 歌曲</b><div class="ex">歌名和歌詞和電影《可可夜總會》(Coco) 的歌曲 Remember Me 很像，那部電影也是以亡靈節為主題。</div></div>
+<div class="card"><b>Remember Me 歌曲</b><div class="ex">劇本裡的 Remember Me 來自電影《可可夜總會》(Coco)，這部電影也是以亡靈節為主題。</div></div>
 <div class="card"><b>Scene 3 結論</b><div class="ex">Don't be afraid of the dead. 不要害怕，記得他們的笑容、故事和愛，<b>They live in our hearts!</b></div></div>
 </div>
 <h2>想一想，說一說</h2>
@@ -125,7 +130,7 @@ const R={'Narrator 1':'#4C6EF5','Narrator 2':'#4C9BF5','Miguel':'#E8890C','Witch
 const P={'Miguel':1.3,'Witch':1.15,'Vampire':.7,'Mummy':.8,'Ghost':1.5};
 const L=[
 ['#','Scene 1 · Introduction','場景一：介紹'],
-['All',"This is Halloween. This is Halloween. Halloween, Halloween, Halloween, Halloween.",1],
+['All',"This is Halloween. This is Halloween. Halloween, Halloween, Halloween, Halloween.","This Is Halloween"],
 ['Narrator 1',"It's Halloween! The moon is high. What a spooky night!"],
 ['Narrator 2',"Look! There are ghosts, witches, mummies, and vampires!"],
 ['Chorus',"Trick or treat! Smell my feet! Give me something good to eat!"],
@@ -160,12 +165,12 @@ const L=[
 ['Witch',"Sing their songs."],
 ['Ghost',"Share their favorite food."],
 ['Miguel',"And remember their love!"],
-['Chorus',"Remember me ~",1],
-['Miguel',"Though I have to say goodbye ~",1],
-['Chorus',"Remember me ~",1],
-['Witch',"Don't let it make you cry ~",1],
-['Vampire',"For even if I'm far away, I hold you in my heart.",1],
-['Ghost',"I sing a secret song to you each night we are apart.",1],
+['Chorus',"Remember me ~","Remember Me"],
+['Miguel',"Though I have to say goodbye ~","Remember Me"],
+['Chorus',"Remember me ~","Remember Me"],
+['Witch',"Don't let it make you cry ~","Remember Me"],
+['Vampire',"For even if I'm far away, I hold you in my heart.","Remember Me"],
+['Ghost',"I sing a secret song to you each night we are apart.","Remember Me"],
 ['Narrator 2',"Wow... What a beautiful song! Not scary at all!"],
 ['Narrator 1',"It warms our hearts!"],
 ['#','Scene 3 · Remember me','場景三：記得我'],
@@ -204,7 +209,7 @@ let last=null;
 function showWord(w,slow){const k=key(w);last=w;document.querySelectorAll('.w.sel').forEach(e=>e.classList.remove('sel'));document.querySelectorAll('.w').forEach(e=>{if(e.dataset.w===w)e.classList.add('sel')});$('sw').textContent=w;$('sz').textContent=D[k]||'（尚無翻譯）';stop();speak(w,ES.has(k)?'es-MX':'en-US',1,slow?.45:rate)}
 const roles=[...new Set(L.filter(l=>l[0]!='#'&&l[0]!='All'&&l[0]!='Chorus').map(l=>l[0]))];
 $('me').innerHTML='<option value="">不扮演（全部聽）</option>'+roles.map(r=>`<option>${r}</option>`).join('');
-let n=0;$('script').innerHTML=L.map((l,i)=>l[0]=='#'?`<h2>${l[1]}　<small>${l[2]}</small></h2>`:`<div class="line" id="L${i}" style="--c:${R[l[0]]}"><div class="role"><i></i>${l[0]}${l[2]?'<span class="song">🎵</span>':''}</div><div class="mid"><div class="txt">${tok(l[1])}</div><div class="tr">${TR[n++]}</div></div><div class="ctl"><button class="play" data-i="${i}" aria-label="播放這句">▶</button><button class="zhb" aria-pressed="false" aria-label="顯示或隱藏這句中文">中</button></div></div>`).join('');
+let n=0;$('script').innerHTML=L.map((l,i)=>l[0]=='#'?`<h2>${l[1]}　<small>${l[2]}</small></h2>`:`<div class="line" id="L${i}" style="--c:${R[l[0]]}"><div class="role"><i></i>${l[0]}${l[2]?`<span class="song">🎵 ${l[2]}</span>`:''}</div><div class="mid"><div class="txt">${tok(l[1])}</div><div class="tr">${TR[n++]}</div></div><div class="ctl"><button class="play" data-i="${i}" aria-label="播放這句">▶</button><button class="zhb" aria-pressed="false" aria-label="顯示或隱藏這句中文">中</button></div></div>`).join('');
 const ex=w=>{const l=L.find(x=>x[0]!='#'&&new RegExp("\\b"+w+"\\b","i").test(x[1]));return l?tok(l[1]):''};
 $('vocab').innerHTML='<p>這些字比較難，先練單字，再回到劇本。</p><div class="cards">'+H.map(([w,s])=>`<div class="card"><b>${w}</b> <span class="syl">${s}</span><div class="zh">${D[key(w)]}</div><div class="ex">${ex(w)}</div><div class="row"><button class="btn" data-v="${w}">🔊 聽單字</button><button class="btn alt" data-v="${w}" data-s="1">🐢 慢速</button></div></div>`).join('')+'</div>';
 async function playLine(i){const l=L[i],el=$('L'+i);document.querySelectorAll('.line.now').forEach(e=>e.classList.remove('now'));el.classList.add('now');el.scrollIntoView({block:'center',behavior:'smooth'});
