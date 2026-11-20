@@ -81,6 +81,7 @@ table{border-collapse:collapse;width:100%}th,td{border:2px solid var(--line);pad
     <button class="tab" role="tab" id="t2" aria-selected="false">重點單字</button>
     <button class="tab" role="tab" id="t3" aria-selected="false">背景知識</button>
     <button class="tab" role="tab" id="t4" aria-selected="false">上課常用資源</button>
+    <button class="tab" role="tab" id="t5" aria-selected="false">場次及座位表</button>
   </div>
 </div></div>
 <main>
@@ -139,6 +140,10 @@ table{border-collapse:collapse;width:100%}th,td{border:2px solid var(--line);pad
 <div class="card"><b>4 複習與回饋</b><div class="ex">用 Blooket 做趣味競賽，並用學習吧在家複習。家長可以聽孩子念一念，給他們鼓勵。</div></div>
 </div>
 <p>以上是學習歷程的示意，實際的進度和使用方式，以老師課堂上的安排為準。</p>
+</section>
+  <section id="seat" class="hide">
+<h2>場次及座位表</h2>
+<div class="card"><b>🗓️ 場次及座位表</b><div class="zh">查看場次安排和座位。</div><a class="btn" href="https://drive.google.com/file/d/1sfO0bx-wpJZ_6akgaCxhJFcbbDQDb70t/view?usp=sharing" target="_blank" rel="noopener">開啟場次及座位表</a></div>
 </section>
 </main>
 <div class="sheet" id="sheet" aria-live="polite"><div>
@@ -248,9 +253,9 @@ $('dr').onchange=e=>document.body.classList.toggle('nodir',!e.target.checked);
 $('zh').onchange=e=>document.querySelectorAll('.line').forEach(l=>{l.classList.toggle('show',e.target.checked);l.querySelector('.zhb').setAttribute('aria-pressed',e.target.checked)});
 $('rate').oninput=e=>{rate=+e.target.value;$('rv').textContent=rate.toFixed(1)+'x'};
 $('sp').onclick=()=>last&&showWord(last);$('ss').onclick=()=>last&&showWord(last,true);
-function tab(n){['script','vocab','bg','res'].forEach((id,i)=>{$(id).classList.toggle('hide',i+1!=n);$('t'+(i+1)).setAttribute('aria-selected',i+1==n)})}
+function tab(n){['script','vocab','bg','res','seat'].forEach((id,i)=>{$(id).classList.toggle('hide',i+1!=n);$('t'+(i+1)).setAttribute('aria-selected',i+1==n)})}
 $('qs').innerHTML=['Who do you remember? 你會想念誰？','What food would you put on your ofrenda? 你會在祭壇放什麼食物？','How is Halloween different from Día de los Muertos? 萬聖節和亡靈節哪裡不一樣？'].map(q=>{const i=q.search(/[\u4e00-\u9fff]/);return '<p><b>'+tok(q.slice(0,i))+'</b><br>'+q.slice(i)+'</p>'}).join('');
-$('t1').onclick=()=>tab(1);$('t2').onclick=()=>tab(2);$('t3').onclick=()=>tab(3);$('t4').onclick=()=>tab(4);
+$('t1').onclick=()=>tab(1);$('t2').onclick=()=>tab(2);$('t3').onclick=()=>tab(3);$('t4').onclick=()=>tab(4);$('t5').onclick=()=>tab(5);
 if(synth)synth.onvoiceschanged=()=>{};
 </script>
 </body>
